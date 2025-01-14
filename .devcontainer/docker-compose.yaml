@@ -1,0 +1,41 @@
+services:
+  devcontainer:
+    image: mcr.microsoft.com/devcontainers/base:ubuntu
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    environment:
+      NODE_ENV: development
+    volumes:
+      - ..:/workspace:cached
+    working_dir: /workspace
+
+  n8n:
+    image: docker.n8n.io/n8nio/n8n
+    environment:
+      N8N_CUSTOM_EXTENSIONS: /workspace
+      N8N_DEV_RELOAD: 'true'
+      N8N_DIAGNOSTICS_ENABLED: 'false'
+      N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: 'true'
+      N8N_LOG_LEVEL: debug
+      N8N_REINSTALL_MISSING_PACKAGES: 'true'
+    ports:
+      - 5678:5678
+    volumes:
+      - n8n_persistent:/home/node/.n8n
+      - ..:/workspace:ro
+
+  presidio-anonymizer:
+    image: mcr.microsoft.com/presidio-anonymizer
+    environment:
+      PORT: '5001'
+    ports:
+      - 5001:5001
+
+  presidio-analyzer:
+    image: mcr.microsoft.com/presidio-analyzer
+    environment:
+      PORT: '5001'
+    ports:
+      - 5002:5001
+
+volumes:
+  n8n_persistent:
