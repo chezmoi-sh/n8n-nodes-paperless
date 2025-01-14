@@ -1,0 +1,33 @@
+{
+	"$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainer.schema.json",
+	"name": "n8n node Development",
+
+	// -- Docker environment configuration
+	"dockerComposeFile": "docker-compose.yaml",
+	"remoteUser": "vscode",
+	"service": "devcontainer",
+	"workspaceFolder": "/workspace",
+
+	// -- IDE configuration
+	"features": {
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1.6.0": {},
+		"ghcr.io/devcontainers/features/node:1.6.1": {
+			"version": "lts",
+			"pnpmVersion": "latest",
+			"installYarnUsingApt": false
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"aaron-bond.better-comments",
+				"dbaeumer.vscode-eslint",
+				"EditorConfig.EditorConfig",
+				"Trunk.io"
+			],
+			"settings": {
+				"terminal.integrated.shell.linux": "/bin/zsh"
+			}
+		}
+	}
+}
