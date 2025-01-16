@@ -1,0 +1,25 @@
+# This Dockerfile is used by Tilt to build the n8n image with the custom
+# n8n node packages.
+# trunk-ignore-all(checkov)
+
+# NOTE: build stage is used to install dependencies and build the n8n
+#       node packages.
+FROM node:20-slim AS build
+
+ENV	PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+
+COPY . /app
+RUN --mount=type=cache,target=/pnpm/store \
+	cd /app && \
+	pnpm install --frozen-lockfile && \
+	pnpm build
+
+
+# NOTE: final stage is used to copy the built n8n node packages to the
+#       n8n image and install them.
+FROM docker.n8n.io/n8nio/n8n:1.74.1
+
+COPY --from=build --chown=node: /app/package.json /n8n/nodes/n8n-nodes-paperless-ngx/package.json
+COPY --from=build --chown=node: /app/dist/ /n8n/nodes/n8n-nodes-paperless-ngx/dist
