@@ -1,0 +1,14 @@
+{
+	"node": "n8n-nodes-base.paperless-ngx",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Data & Storage"],
+	"resources": {
+		"credentialDocumentation": [],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.paperless-ngx.com/"
+			}
+		]
+	}
+}
