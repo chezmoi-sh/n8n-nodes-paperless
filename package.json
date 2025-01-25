@@ -47,7 +47,7 @@
 		"@trunkio/launcher": "^1.3.4",
 		"@types/node": "^18.10.0",
 		"@typescript-eslint/parser": "^7.18.0",
-		"eslint": "^8.57.1",
+		"eslint": "^9.0.0",
 		"eslint-plugin-n8n-nodes-base": "^1.16.3",
 		"gulp": "^4.0.2",
 		"n8n-workflow": "^1.70.0",
