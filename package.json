@@ -1,7 +1,7 @@
 {
-	"name": "n8n-nodes-presidio",
+	"name": "n8n-nodes-paperless",
 	"version": "0.1.0",
-	"description": "N8N community node to anonymize data using microsoft/presidio.",
+	"description": "N8N community node manage your documents with Paperless-ngx.",
 	"keywords": [
 		"n8n-community-node-package"
 	],
@@ -13,7 +13,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/xunleii/n8n-nodes-presidio.git"
+		"url": "https://github.com/xunleii/n8n-nodes-paperless-ngx.git"
 	},
 	"engines": {
 		"node": ">=18.10",
@@ -37,16 +37,15 @@
 	"n8n": {
 		"n8nNodesApiVersion": 1,
 		"credentials": [
-			"dist/credentials/ExampleCredentialsApi.credentials.js",
-			"dist/credentials/HttpBinApi.credentials.js"
+			"dist/credentials/paperlessApi.credentials.js"
 		],
 		"nodes": [
-			"dist/nodes/ExampleNode/ExampleNode.node.js",
-			"dist/nodes/HttpBin/HttpBin.node.js"
+			"dist/nodes/Paperless/Paperless.node.js"
 		]
 	},
 	"devDependencies": {
 		"@trunkio/launcher": "^1.3.4",
+		"@types/node": "^18.10.0",
 		"@typescript-eslint/parser": "^7.18.0",
 		"eslint": "^8.57.1",
 		"eslint-plugin-n8n-nodes-base": "^1.16.3",
@@ -57,5 +56,8 @@
 	},
 	"peerDependencies": {
 		"n8n-workflow": "*"
+	},
+	"dependencies": {
+		"form-data": "^4.0.1"
 	}
 }

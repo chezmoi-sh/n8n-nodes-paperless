@@ -1,20 +1,22 @@
 {
 	"$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainer.schema.json",
 	"name": "n8n node Development",
-
 	// -- Docker environment configuration
-	"dockerComposeFile": "docker-compose.yaml",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
 	"remoteUser": "vscode",
-	"service": "devcontainer",
-	"workspaceFolder": "/workspace",
-
+	"workspaceFolder": "/workspaces/n8n-nodes-paperless",
 	// -- IDE configuration
 	"features": {
-		"ghcr.io/devcontainers/features/docker-outside-of-docker:1.6.0": {},
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1.6.0": {
+			"dockerDashComposeVersion": "v2.32.3"
+		},
 		"ghcr.io/devcontainers/features/node:1.6.1": {
 			"version": "lts",
 			"pnpmVersion": "latest",
 			"installYarnUsingApt": false
+		},
+		"ghcr.io/devcontainers-extra/features/asdf-package:1.0.9": {
+			"plugin": "tilt"
 		}
 	},
 	"customizations": {
@@ -23,7 +25,9 @@
 				"aaron-bond.better-comments",
 				"dbaeumer.vscode-eslint",
 				"EditorConfig.EditorConfig",
-				"Trunk.io"
+				"Trunk.io",
+				"tilt-dev.tiltfile",
+				"GitHub.copilot"
 			],
 			"settings": {
 				"terminal.integrated.shell.linux": "/bin/zsh"
