@@ -10,6 +10,9 @@ print("""
 -----------------------------------------------------------------
 """.strip())
 
+# Configure Docker pruning to prevent disk space issues
+# - Keeps only 5 builds in total
+# - Preserves the 2 most recent builds
 docker_prune_settings(num_builds=5, keep_recent=2)
 
 docker_compose('./.devcontainer/docker-compose.yaml')
