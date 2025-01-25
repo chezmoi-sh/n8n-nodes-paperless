@@ -10,7 +10,7 @@
 </div>
 <!-- trunk-ignore-end(markdownlint/MD033) -->
 
-This is an n8n community node. It lets you use [Paperless-ngx](https://docs.paperless-ngx.com/) in your n8n workflows.
++This is a n8n community node. It lets you use [Paperless-ngx](https://docs.paperless-ngx.com/) in your n8n workflows.  
 
 Paperless-ngx is a document management system that transforms your physical documents into a searchable online archive so you can keep your paper documents, but lose the cabinet.
 
@@ -25,7 +25,7 @@ Paperless-ngx is a document management system that transforms your physical docu
 Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
 
 > [!NOTE]
-> If you install this node, n8n will probably automatically install the extra npm package `form-data` (which may already be installed with n8n).
+> This node requires the `form-data` package for handling multipart/form-data requests. It will be automatically installed as a dependency if not already present in your n8n installation.  
 
 ## Operations
 
@@ -83,6 +83,10 @@ The node supports the following resources and operations:
 
 - Get a task
 
+## AI Tools
+
+This node can also be used to interact with the [AI tools agent](https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/tools-agent/). However, keep in mind that it is currently not officially supported by n8n and needs some changes to the n8n codebase to work. For more details, see [this issue](https://github.com/n8n-io/n8n/issues/12593).
+
 ## Credentials
 
 You need to provide the following to authenticate:
@@ -98,7 +102,7 @@ To get your API token:
 
 ## Compatibility
 
-Requires n8n version 1.0.0 or later and Paperless-ngx version 2.14.0 or later (not tested prior versions).
+Requires n8n version 1.0.0 or later and Paperless-ngx version 2.14.0 or later. Earlier versions may work but are not officially supported or tested.
 
 ## Resources
 

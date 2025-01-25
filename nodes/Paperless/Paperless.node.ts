@@ -11,6 +11,7 @@ export class Paperless extends VersionedNodeType {
 			description: 'Consume documents and metadata from Paperless-ngx API',
 			group: ['input'],
 			icon: 'file:paperless-ngx.svg',
+			usableAsTool: true, // WARN: This enables AI Tools agent integration but is not officially supported by n8n. See: https://github.com/n8n-io/n8n/issues/12593
 		};
 
 		const nodeVersions: IVersionedNodeType['nodeVersions'] = {
