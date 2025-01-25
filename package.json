@@ -1,19 +1,21 @@
 {
 	"name": "@n8n-chezmoi-sh/n8n-nodes-paperless",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "N8N community node manage your documents with Paperless-ngx.",
 	"keywords": [
-		"n8n-community-node-package"
+		"n8n-community-node-package",
+		"paperless",
+		"paperless-ngx"
 	],
 	"license": "MIT",
-	"homepage": "https://github.com/xunleii/n8n-nodes-paperless-ngx#readme",
+	"homepage": "https://github.com/chezmoi-sh/n8n-nodes-paperless-ngx#readme",
 	"author": {
 		"name": "Alexandre NICOLAIE",
 		"email": "xunleii@users.noreply.github.com"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/xunleii/n8n-nodes-paperless-ngx.git"
+		"url": "https://github.com/chezmoi-sh/n8n-nodes-paperless-ngx.git"
 	},
 	"engines": {
 		"node": ">=18.10",
@@ -61,6 +63,6 @@
 		"form-data": "^4.0.1"
 	},
 	"bugs": {
-		"url": "https://github.com/xunleii/n8n-nodes-paperless-ngx/issues"
+		"url": "https://github.com/chezmoi-sh/n8n-nodes-paperless-ngx/issues"
 	}
 }

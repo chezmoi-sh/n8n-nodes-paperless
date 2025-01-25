@@ -6,7 +6,11 @@
 
 <!-- trunk-ignore-begin(markdownlint/MD033) -->
 <div align="center">
-	<img src="./nodes/Paperless/v2/paperless-ngx.svg" alt="Paperless Icon" height="50px">
+	<img 
+		src="https://raw.githubusercontent.com/chezmoi-sh/n8n-nodes-paperless/refs/heads/main/nodes/Paperless/v2/paperless-ngx.svg"
+		alt="Paperless Icon"
+		height="50px"
+	>
 </div>
 <!-- trunk-ignore-end(markdownlint/MD033) -->
 
