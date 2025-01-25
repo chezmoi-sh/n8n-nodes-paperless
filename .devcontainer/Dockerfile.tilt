@@ -19,7 +19,7 @@ RUN --mount=type=cache,target=/pnpm/store \
 
 # NOTE: final stage is used to copy the built n8n node packages to the
 #       n8n image and install them.
-FROM docker.n8n.io/n8nio/n8n:1.74.1
+FROM docker.n8n.io/n8nio/n8n:1.76.1
 
 COPY --from=build --chown=node: /app/package.json /n8n/nodes/n8n-nodes-paperless-ngx/package.json
 COPY --from=build --chown=node: /app/dist/ /n8n/nodes/n8n-nodes-paperless-ngx/dist
