@@ -1,6 +1,6 @@
 {
 	"name": "@n8n-chezmoi-sh/n8n-nodes-paperless",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "N8N community node manage your documents with Paperless-ngx.",
 	"keywords": [
 		"n8n-community-node-package",
@@ -39,7 +39,7 @@
 	"n8n": {
 		"n8nNodesApiVersion": 1,
 		"credentials": [
-			"dist/credentials/paperlessApi.credentials.js"
+			"dist/credentials/PaperlessApi.credentials.js"
 		],
 		"nodes": [
 			"dist/nodes/Paperless/Paperless.node.js"
